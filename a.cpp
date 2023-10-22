@@ -146,6 +146,7 @@ int main() {
     listaAutos.agregarAuto(1, "Toyota", "Camry", 2022, 50.0);
     listaAutos.agregarAuto(2, "Honda", "Civic", 2021, 45.0);
     listaAutos.agregarAuto(3, "Ford", "Focus", 2022, 48.0);
+    listaAutos.agregarAuto(4,"Fiat","Palio",2005,32.0);
     
     listaAutos.listarAutosDisponibles();
     
