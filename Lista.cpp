@@ -1,12 +1,12 @@
 #include "Lista.h"
 
 Lista::Lista() {
-    // C�digo de inicializaci�n si es necesario
+            //constructor    
 }
 
 
 void Lista::agregarAuto(Car carro) {
-    Car* nuevoAuto = new Car(carro.alquilado, carro.marca, carro.modelo, carro.anioFabricacion, carro.tarifaDiaria, carro.alquilado);
+    Car* nuevoAuto = new Car(carro.numeroSerie, carro.marca, carro.modelo, carro.anioFabricacion, carro.tarifaDiaria, carro.alquilado);
     nuevoAuto->siguiente = HEAD;
     HEAD = nuevoAuto;
 }
@@ -31,7 +31,27 @@ void Lista::impAuto(){
         }
         
         actual = actual->siguiente;
-    
+
     }
+
+    
+}
+
+bool Lista::alquilarAuto(int numSerie) {
+
+    Car* actual = HEAD;
+    
+    while (actual) {
+    
+        if (actual->numeroSerie == numSerie && !actual->alquilado) {
+    
+            actual->alquilado = true;
+    
+            return true;
+        }
+        actual = actual->siguiente;
+    }
+
+    return false;
 
 }

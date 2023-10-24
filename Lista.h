@@ -19,6 +19,9 @@ public:
     void agregarAuto(Car carro);
 
     void impAuto();
+
+    bool alquilarAuto(int numSerie);
+
 };
 
 #endif // LISTA_H

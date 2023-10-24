@@ -13,8 +13,6 @@ int main() {
 
     ejecutar.arranque();
 
-    system("pause");
-
     return 0;
 
 }
