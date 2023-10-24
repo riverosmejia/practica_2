@@ -69,9 +69,31 @@ bool Lista::devolverAuto(int numSerie) {
     
             return true;
         }
+        
         actual = actual->siguiente;
     }
 
     return false;
+
+}
+
+double Lista::Ganancias(){
+
+    ganancias=0.0;
+
+    Car* actual = HEAD;
+    
+    while (actual) {
+        
+        if (actual->alquilado) {
+
+            ganancias += actual->tarifaDiaria;
+        
+        }
+        
+        actual = actual->siguiente;
+    }
+
+    return ganancias;
 
 }

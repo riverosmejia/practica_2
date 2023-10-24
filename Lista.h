@@ -12,6 +12,7 @@ class Lista {
 
 private:
     Car* HEAD = nullptr;
+    double ganancias=0.0;
 
 public:
     Lista();
@@ -23,6 +24,8 @@ public:
     bool alquilarAuto(int numSerie);
 
     bool devolverAuto(int numSerie);
+
+    double Ganancias();
 
 };
 
