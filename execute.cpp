@@ -92,10 +92,10 @@ public:
                     cout<<"\n\n<----Auto Alquilado con exito---->\n\n";
 
                 }
-
+                
                 else{
 
-                    cout<<"\n\n<---El numero del auto que ingresaste es invalido o ya esta alquilado--->\n";
+                    cout<<"\n\n<---El numero del auto que ingresaste es invalido o ya esta alquilado--->\n\n";
 
                 }
 

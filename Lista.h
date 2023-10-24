@@ -22,6 +22,8 @@ public:
 
     bool alquilarAuto(int numSerie);
 
+    bool devolverAuto(int numSerie);
+
 };
 
 #endif // LISTA_H

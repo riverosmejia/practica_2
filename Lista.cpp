@@ -7,6 +7,7 @@ Lista::Lista() {
 
 void Lista::agregarAuto(Car carro) {
     Car* nuevoAuto = new Car(carro.numeroSerie, carro.marca, carro.modelo, carro.anioFabricacion, carro.tarifaDiaria, carro.alquilado);
+    //el error se basaba en que el carro.numeroSerie no estaba en la posición dentro del aprentesis adecuada, por lo cual todos lo autos tenían 0
     nuevoAuto->siguiente = HEAD;
     HEAD = nuevoAuto;
 }
@@ -46,6 +47,25 @@ bool Lista::alquilarAuto(int numSerie) {
         if (actual->numeroSerie == numSerie && !actual->alquilado) {
     
             actual->alquilado = true;
+    
+            return true;
+        }
+        actual = actual->siguiente;
+    }
+
+    return false;
+
+}
+
+bool Lista::devolverAuto(int numSerie) {
+
+    Car* actual = HEAD;
+    
+    while (actual) {
+    
+        if (actual->numeroSerie == numSerie && actual->alquilado) {
+    
+            actual->alquilado = false;
     
             return true;
         }
