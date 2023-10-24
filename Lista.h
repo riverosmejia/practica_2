@@ -2,7 +2,11 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#include "Car.h" // Asegúrate de incluir el archivo de encabezado de Car
+#include "Car.h" // Asegï¿½rate de incluir el archivo de encabezado de Car
+
+#include <iostream>
+
+using namespace std;
 
 class Lista {
 
@@ -13,6 +17,8 @@ public:
     Lista();
 
     void agregarAuto(Car carro);
+
+    void impAuto();
 };
 
 #endif // LISTA_H

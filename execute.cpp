@@ -1,6 +1,7 @@
 
 
 #include <iostream>
+#include <cstdlib>
 #include "Car.h"  // Incluye el archivo de encabezado de Car
 #include "Lista.h"  // Incluye el archivo de encabezado de List
 
@@ -25,13 +26,13 @@ public:
         Car carro4(4, "Toyota", "Corolla", 2023, 150.0, false);
         ListaAutos.agregarAuto(carro4);
 
-        programa();
+        programa(ListaAutos);
 
     }
 
-    void programa() {
+    void programa(Lista ListaAutos) {
 
-        system("cls");
+        ListaAutos.impAuto();
 
         cout << "prueba de mejora\n\n";
 
