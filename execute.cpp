@@ -68,7 +68,7 @@ public:
 
             if(num==1){
 
-                //ListaAutos.impAuto();//
+                ListaAutos.impAuto();//ListaAutos.impAuto();//
             
             }
 

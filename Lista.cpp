@@ -27,10 +27,10 @@ void Lista::impAuto(){
 void Lista::recursive(Car* actual){
 
     if (actual != nullptr) {
-            cout << "Número de serie: " << actual->numeroSerie << endl;
+            cout << "Numero de serie: " << actual->numeroSerie << endl;
             cout << "Marca: " << actual->marca << endl;
             cout << "Modelo: " << actual->modelo << endl;
-            cout << "Año de fabricación: " << actual->anioFabricacion << endl;
+            cout << "Anio de fabricacion: " << actual->anioFabricacion << endl;
             cout << "Tarifa diaria: " << actual->tarifaDiaria << endl << endl;
             recursive(actual->siguiente);
         }
