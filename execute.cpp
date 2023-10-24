@@ -68,7 +68,7 @@ public:
 
             if(num==1){
 
-                ListaAutos.impAuto();
+                //ListaAutos.impAuto();//
             
             }
 
@@ -134,7 +134,7 @@ public:
 
                 double g=ListaAutos.Ganancias();
 
-                cout<<"\n\nINGRESOS ACTUALES: \n"<<g;
+                cout<<"\n\nINGRESOS ACTUALES: "<<g<<"\n\n";
 
             }
 

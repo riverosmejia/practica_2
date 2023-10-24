@@ -21,6 +21,8 @@ public:
 
     void impAuto();
 
+    void recursive(Car* actual);
+
     bool alquilarAuto(int numSerie);
 
     bool devolverAuto(int numSerie);

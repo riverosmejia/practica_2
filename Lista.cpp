@@ -20,22 +20,22 @@ void Lista::impAuto(){
 
     cout<<"AUTOS DISPONIBLES: \n\n";
 
-    while (actual) {
+    recursive(HEAD);
     
-        if (!actual->alquilado) {
-            cout << "Numero de serie: " << actual->numeroSerie << "\n";
-            cout << "Marca: " << actual->marca << "\n";
-            cout << "Modelo: " << actual->modelo << "\n";
-            cout << "Anio de fabricacion: " << actual->anioFabricacion << "\n";
-            cout << "Tarifa diaria: " << actual->tarifaDiaria << "\n";
-            cout << "---------------------\n";
+}
+
+void Lista::recursive(Car* actual){
+
+    if (actual != nullptr) {
+            cout << "Número de serie: " << actual->numeroSerie << endl;
+            cout << "Marca: " << actual->marca << endl;
+            cout << "Modelo: " << actual->modelo << endl;
+            cout << "Año de fabricación: " << actual->anioFabricacion << endl;
+            cout << "Tarifa diaria: " << actual->tarifaDiaria << endl << endl;
+            recursive(actual->siguiente);
         }
-        
-        actual = actual->siguiente;
 
-    }
 
-    
 }
 
 bool Lista::alquilarAuto(int numSerie) {
