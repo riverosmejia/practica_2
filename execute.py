@@ -1,4 +1,16 @@
+
+import os
+
+def clear_screen():
+    # Verifica si estás en un sistema Windows
+    if os.name == 'nt':
+        _ = os.system('cls')  # Para Windows
+    else:
+        _ = os.system('clear')  # Para Unix/Linux
+
+
 class Car:
+    
     def __init__(self, serie, marca, modelo, anio, tarifa_diaria, alquilado):
         self.serie = serie
         self.marca = marca
@@ -6,6 +18,7 @@ class Car:
         self.anio = anio
         self.tarifa_diaria = tarifa_diaria
         self.alquilado = alquilado
+        self.pase=0
 
 class Lista:
     gan=0.0 
@@ -32,16 +45,27 @@ class Lista:
         for carro in self.autos:
             if carro.serie == num and carro.alquilado:
                 carro.alquilado = False
+                carro.pase=0
                 return True
         return False
 
     def ganancias(self):
+        for carro in self.autos:
+            if carro.alquilado and carro.pase == 0:
+                self.gan += carro.tarifa_diaria
+                carro.pase=1
+        return self.gan
 
-        self.gan=self.gan + sum(carro.tarifa_diaria for carro in self.autos if carro.alquilado)
+    def Reinicio(self):
+        
+        self.gan=0.0
 
-        return self.gan;
+        for carro in self.autos:
+            
+            carro.pase=0
 
 class execute:
+
     def arranque(self):
         ListaAutos = Lista()
 
@@ -74,11 +98,15 @@ class execute:
 
             num=0;
 
-            while num < 1 or num > 5:
-                num = int(input("MENU:\n\n1. Autos Disponibles.\n2. Alquilar Auto\n3. Devolver Auto\n4. Ingresos Totales Actuales\n5. Salir\n\nR/= "))
+            clear_screen()
 
-                if num < 1 or num > 5:
+            while num < 1 or num > 6:
+                num = int(input("MENU:\n\n1. Autos Disponibles.\n2. Alquilar Auto\n3. Devolver Auto\n4. Ingresos Totales Actuales\n5. Salir\n6. Reiniciar el contador de ingresos\n\nR/= "))
+
+                if num < 1 or num > 6:
                     print("Número no válido. Debe estar en el rango de 1 a 5.")
+
+            clear_screen()
 
             if num == 1:
                 ListaAutos.imprimir_autos()
@@ -103,6 +131,10 @@ class execute:
 
             if num == 5:
                 print("\n\nAdiós\n\n")
+
+            if num ==6:
+                ListaAutos.Reinicio()
+                print("\nreinicio hecho\n\n")
 
             input("Presiona Enter para continuar...")
             
